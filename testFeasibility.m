@@ -10,7 +10,7 @@ maskTissueFull = false(reader.height, reader.width);
 maskIsletsFull = false(reader.height, reader.width);
 
 tStart = tic;
-for ii = 160%1:prod(numTiles)
+for ii = 1:prod(numTiles)
 
     % Ired = getPlane(reader, 1, 1, 1, 'ROI', [10000, 10000, 1000, 1000]);
     % Igreen = getPlane(reader, 1, 2, 1, 'ROI', [10000, 10000, 1000, 1000]);
@@ -22,7 +22,7 @@ for ii = 160%1:prod(numTiles)
 
     Irgb = cat(3, Ired, Igreen, Iblue);
 
-    imshow(Irgb,[])
+    % imshow(Irgb,[])
 
     %%
 
@@ -53,8 +53,8 @@ for ii = 160%1:prod(numTiles)
     % maskTissue = imopen(maskTissue, strel('disk', 3));
 
     maskTissue = Igreen < 190 & Igreen > 5;
-    %maskTissue = imclose(maskTissue, strel('disk', 10));
-    imshowpair(Irgb, maskTissue)
+    maskTissue = imclose(maskTissue, strel('disk', 7));
+    % imshowpair(Irgb, maskTissue)
 
     maskTissueFull(rect(2):(rect(2)+rect(4) - 1), rect(1):(rect(1)+rect(3) - 1)) = maskTissue;
     maskIsletsFull(rect(2):(rect(2)+rect(4) - 1), rect(1):(rect(1)+rect(3) - 1)) = maskIslets;
