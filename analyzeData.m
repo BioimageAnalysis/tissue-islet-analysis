@@ -1,11 +1,14 @@
 clearvars
 clc
 
-IisletMask = imread('D:\Documents\OneDrive - UCB-O365\Shared\Shared with Hill Lab\test_isletMask.tif');
+% IisletMask = imread('D:\Documents\OneDrive - UCB-O365\Shared\Shared with Hill Lab\test_isletMask.tif');
+% 
+% IisletMask = imopen(IisletMask, strel('disk',5));
+% IisletMask = imclose(IisletMask, strel('disk',10));
+% IisletMask = bwareaopen(IisletMask, 15);
 
-IisletMask = imopen(IisletMask, strel('disk',5));
-IisletMask = imclose(IisletMask, strel('disk',10));
-IisletMask = bwareaopen(IisletMask, 15);
+load('20240405data.mat')
+IisletMask = L;
 
 ItisseMask = imread('D:\Documents\OneDrive - UCB-O365\Shared\Shared with Hill Lab\test_tissueMask.tif');
 

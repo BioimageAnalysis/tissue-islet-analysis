@@ -1,8 +1,8 @@
 clearvars
 clc
 
-%reader = BioformatsImage('D:\Documents\OneDrive - UCB-O365\Projects\2024 Hill\cdubvGF_101623\2023_10_16__0013.czi');
-reader = BioformatsImage('C:\Users\Jian Tay\OneDrive - UCB-O365\Projects\2024 Hill\cdubvGF_101623\2023_10_16__0013.czi');
+reader = BioformatsImage('D:\Documents\OneDrive - UCB-O365\Projects\2024 Hill\cdubvGF_101623\2023_10_16__0013.czi');
+%reader = BioformatsImage('C:\Users\Jian Tay\OneDrive - UCB-O365\Projects\2024 Hill\cdubvGF_101623\2023_10_16__0013.czi');
 
 numTiles = [25, 25];
 

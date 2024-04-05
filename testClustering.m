@@ -9,23 +9,9 @@ maskIsletsFullTMP = imopen(maskIsletsFullTMP, strel('disk', 25));
 maskIsletsFullTMP = bwareaopen(maskIsletsFullTMP, 1000);
 
 %Relabel
+L = bwlabel(maskIsletsFullTMP);
+L = L .* maskIsletsFull;
+L = uint16(L);
+save('20240405data.mat','L')
 
-
-imshow(maskIsletsFullTMP);
-
-
-
-
-
-
-%Measure x-y locations
-[rowIdx, colIdx] = find(maskIsletsFull);
-
-idx = dbscan([colIdx, rowIdx], 15, 30);
-
-xx = colIdx(idx > 0);
-yy = rowIdx(idx > 0);
-
-idxFilt = idx(idx > 0);
-
-gscatter(xx, yy, idxFilt);
+imshow(label2rgb(L));
