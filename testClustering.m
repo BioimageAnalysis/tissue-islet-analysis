@@ -12,6 +12,7 @@ maskIsletsFullTMP = bwareaopen(maskIsletsFullTMP, 1000);
 L = bwlabel(maskIsletsFullTMP);
 L = L .* maskIsletsFull;
 L = uint16(L);
-save('20240405data.mat','L')
+
+%save('20240405data.mat','L')
 
 imshow(label2rgb(L));

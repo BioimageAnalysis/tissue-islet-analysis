@@ -69,5 +69,5 @@ for ii = 1:prod(numTiles)
 end
 toc(tStart)
 
-% imwrite(maskIsletsFull, 'test_isletMask.tif', 'Compression', 'none');
-% imwrite(maskTissueFull, 'test_tissueMask.tif', 'Compression', 'none');
+imwrite(maskIsletsFull, 'test_isletMask.tif', 'Compression', 'none');
+imwrite(maskTissueFull, 'test_tissueMask.tif', 'Compression', 'none');
